@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <title>Buddha Bowl Creator</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/0afbc19ae4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa-solid fa-bowl-food"></span> Buddha Bowl Recipes</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- PROFILE INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa-regular fa-user"></span> Profile</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h3>Create Your Bowl</h3>
+            <form action="/newBowl" method="POST">
+                <!-- Title -->
+                <input type="text" name="title" placeholder="Give Your Bowl A Name" required>
+        
+                <!-- Base -->
+                <label for="base">Select Base(s):</label>
+                <select name="base" multiple required>
+                    <option value="quinoa">Quinoa</option>
+                    <option value="brown rice">Brown Rice</option>
+                    <option value="white rice">White Rice</option>
+                    <option value="wild rice">Wild Rice</option>
+                    <option value="mixed greens">Mixed Greens</option>
+                    <option value="kale">Kale</option>
+                    <option value="arugula">Arugula</option>
+                    <option value="cauliflower rice">Cauliflower Rice</option>
+                    <option value="couscous">Couscous</option>
+                    <option value="zucchini noodles">Zucchini Noodles</option>
+                </select>
+                
+                <!-- Protein -->
+                <label for="protein">Select Protein(s):</label>
+                <select name="protein" multiple required>
+                    <option value="tofu">Tofu</option>
+                    <option value="tempeh">Tempeh</option>
+                    <option value="chickpeas">Chickpeas</option>
+                    <option value="black beans">Black Beans</option>
+                    <option value="grilled chicken">Grilled Chicken</option>
+                </select>
+                
+                <!-- Veggies -->
+                <label for="veggies">Select Veggies:</label>
+                <select name="veggies" multiple required>
+                    <option value="broccoli">Broccoli</option>
+                    <option value="carrots">Carrots</option>
+                    <option value="cucumber">Cucumber</option>
+                    <option value="avocado">Avocado</option>
+                    <option value="sweet potato">Sweet Potato</option>
+                    <option value="spinach">Spinach</option>
+                    <option value="red cabbage">Red Cabbage</option>
+                </select>
+                
+                <!-- Toppings -->
+                <label for="toppings">Select Toppings (Optional):</label>
+                <select name="toppings" multiple>
+                    <option value="sesame seeds">Sesame Seeds</option>
+                    <option value="tahini sauce">Tahini Sauce</option>
+                    <option value="hummus">Hummus</option>
+                    <option value="green onions">Green Onions</option>
+                    <option value="cashews">Cashews</option>
+                    <option value="almonds">Almonds</option>
+                </select>
+                
+                
+                <button type="submit">Submit Your Bowl</button>
+                </form>
+                
+        </div>
+        <% } %>
+
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
