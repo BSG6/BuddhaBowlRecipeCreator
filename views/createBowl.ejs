@@ -38,7 +38,7 @@
         </div>
         <div class="col-sm-6">
             <h3>Create Your Bowl</h3>
-            <form action="/newBowl" method="POST">
+            <form id="form" action="/bowl" method="POST">
                 <!-- Title -->
                 <input type="text" name="title" placeholder="Give Your Bowl A Name" required>
         
@@ -91,11 +91,10 @@
                 </select>
                 
                 
-                <button type="submit">Submit Your Bowl</button>
+                <button class="submit" type="submit">Submit Your Bowl</button>
                 </form>
-                
+                <p><a href="/recipes">Go saved to recipes</a></p>
         </div>
-        <% } %>
 
 </div>
 

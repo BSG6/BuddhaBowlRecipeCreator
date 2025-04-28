@@ -21,20 +21,20 @@
         <div class="col-sm-6">
             <h3>Recipes</h3>
             <ul class="messages">
-            <% for(var i=0; i<recipes.length; i++) {%>
+            <% for(var i=0; i<bowl.length; i++) {%>
                 <li class="message">
-                <span><%= recipes[i].title %></span>
-                <span><%= recipes[i].thumbUp %></span>
+                <span><%= bowl[i].title %></span>
+                <span><%= bowl[i].thumbUp %></span>
                 <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
                 <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
                 <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
                 </li>
             <% } %>
             </ul>
-
+            <p><a href="/bowl">Create a new bowl</a></p>
 </div>
 
-<script src="main.js"></script>
+<script src="recipes.js"></script>
 
 </body>
 </html> 
